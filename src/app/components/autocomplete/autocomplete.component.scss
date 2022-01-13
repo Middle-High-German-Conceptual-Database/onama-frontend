@@ -1,0 +1,23 @@
+.ac-wrapper {
+  position: relative;
+  .ac-list {
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 5px;
+    left: 0.2rem;
+    right: 0.2rem;
+    top: 1.8rem;
+    background: white;
+    .ac-item {
+      width: 100%;
+      border-bottom: 1px solid gray;
+      cursor: pointer;
+      &:last-of-type{
+        border-bottom: none;
+      }
+      &.active {
+        background-color: lightgray;
+      }
+    }
+  }
+}

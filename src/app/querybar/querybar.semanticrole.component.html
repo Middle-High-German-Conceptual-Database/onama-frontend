@@ -1,0 +1,13 @@
+<div class="semanticrole">
+    <div class="input-row">
+        <input type="checkbox" id="{{data.uri}}" [(ngModel)]="data.checked">
+        <label style="white-space: nowrap;" class="mb-0 d-inline" for="{{data.uri}}">
+            <span class="ml-2">{{data.label.replace("Rolle ", "")}}</span>
+        </label>
+    </div>
+    <ul class="subStructure">
+        <li *ngFor="let node of data.owlHierarchy" class="my-0 ml-3">
+            <app-query-bar-semanticrole [data]="node"></app-query-bar-semanticrole>
+        </li>
+    </ul>
+</div>

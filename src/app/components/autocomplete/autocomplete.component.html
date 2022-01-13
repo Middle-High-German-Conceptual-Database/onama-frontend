@@ -1,0 +1,10 @@
+<div class="ac-wrapper">
+  <input type="text" [class]="inputclass" #inputElem [(ngModel)]="value" (ngModelChange)="updateValue()"
+    ngDefaultControl (keydown)="keyEvent($event)" (focus)="focused = true" (focusout)="focused = false">
+  <div class="ac-list" *ngIf="focused && filterData.length > 0">
+    <div class="ac-item" *ngFor="let data of filterData; let i = index" (mouseenter)="active = i"
+      (mousedown)="itemClick(data.key)" [ngClass]="{'active': active == i}" [id]="'ac_' + data.key">
+      {{data.value}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="de" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="simple" datatype="html" approved="yes">
+        <source>Einfach</source>
+        <target state="translated">Simple</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="narative" datatype="html" approved="yes">
+        <source>Narrativ</source>
+        <target state="translated">Narrative</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="structured" datatype="html" approved="yes">
+        <source>Strukturiert</source>
+        <target state="translated">Structured</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="oss" datatype="html" approved="yes">
+        <source>Einfache Suche</source>
+        <target state="translated">Simple Search</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="search" datatype="html" approved="yes">
+        <source>Suchen</source>
+        <target state="translated">Search</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cancel" datatype="html" approved="yes">
+        <source>Abbrechen</source>
+        <target state="translated">Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="osq" datatype="html" approved="yes">
+        <source>Strukturierte Suche</source>
+        <target state="translated">Structured Search</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reset" datatype="html" approved="yes">
+        <source>Abbrechen</source>
+        <target state="translated">Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ons" datatype="html" approved="yes">
+        <source>Narrativ- Suche</source>
+        <target state="translated">Narrative Search</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ef623008673bd2f0a928de8947d89e195d4bb081" datatype="html" approved="yes">
+        <source>Bezeichnung</source>
+        <target state="translated">Label</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a583219a4758b0b56503cde5770e26ab3c704930" datatype="html" approved="yes">
+        <source>Typ</source>
+        <target state="translated">Type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8daa7e5e7fadbaf1f0bbb6fc0827b3d63f1a5696" datatype="html" approved="yes">
+        <source>Konzept</source>
+        <target state="translated">Concept</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="95cdc285a5ef26dc9c48c50aef07dfaf405b1351" datatype="html" approved="yes">
+        <source>Realisierung</source>
+        <target state="translated">Realisation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8ba143716c2da6e4120c0c1a804f0bdd9a7e5f5b" datatype="html" approved="yes">
+        <source>Text</source>
+        <target state="translated">Text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5ccc633c2e84a1ddb8f59dec8affa3af4aed7988" datatype="html" approved="yes">
+        <source>Bild</source>
+        <target state="translated">Image</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8eba645f6e1f9573b6e4ae963f0fc45482131dbd" datatype="html" approved="yes">
+        <source>Sammlungen</source>
+        <target state="translated">Collections</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="choose" datatype="html" approved="yes">
+        <source>wählen</source>
+        <target state="translated">choose</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="29a640b37d8d961491725648d2d630209b42b5b3" datatype="html" approved="yes">
+        <source>Keine Sammlungen ausgewählt</source>
+        <target state="translated">No collections selected</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2068e6a76a66f6e03b2b4b65d1c13393e255073f" datatype="html">
+        <source>Weitere Sammlung</source>
+        <target state="translated">add a collection</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff11f96fc2933bf8ff7e930aefd42a61dedef6bd" datatype="html" approved="yes">
+        <source>Handlungen</source>
+        <target state="translated">Actions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b32b48ef8723f759cf0a3da0afffa4eb8ad31f06" datatype="html">
+        <source>Weitere Handlung</source>
+        <target state="translated">add an action</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fb1c9dadbb2cd3ae817d1dbf919a85c6f3e50df6" datatype="html" approved="yes">
+        <source>Keine Handlungen ausgewählt</source>
+        <target state="translated">No Actions selected</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4d8bc09b343898ec5097fbff5a312c576a636989" datatype="html" approved="yes">
+        <source>Entitäten</source>
+        <target state="translated">Entities</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addEntity" datatype="html" approved="yes">
+        <source>Entität hinzufügen</source>
+        <target state="translated">Add Entity</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3550aee8cce4b7294dcb97bf95dbbfa17191a861" datatype="html" approved="yes">
+        <source>Entitätsfunktion</source>
+        <target state="translated">Entity Function</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="600281e6946bd00344d2153ca21ea39fd76f232d" datatype="html" approved="yes">
+        <source>Klasse</source>
+        <target state="translated">Class</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f30eed511f235ac7b79fc5c042111a5ee0734609" datatype="html" approved="yes">
+        <source>Semantische Rolle</source>
+        <target state="translated">Semantic Role</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">142</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0fecc0271c887e4d60d4390295c76557b5385614" datatype="html" approved="yes">
+        <source>Keine Entitäten hinzugefügt</source>
+        <target state="translated">No entities added</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="42f1ce3c0de8d370733151b6b436160c19240ce2" datatype="html" approved="yes">
+        <source>Relationen</source>
+        <target state="translated">Properties</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.structure.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a454ad40c4060da645de2245b89a9737f1107c3a" datatype="html" approved="yes">
+        <source>Schnellsuche</source>
+        <target state="translated">Quick Search</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a134eb8acc3d0e3157e1d922f158b61b611a2664" datatype="html" approved="yes">
+        <source>Zeige SPARQL-Abfrage</source>
+        <target state="translated">Show SPARQL Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/detail/detail.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/detail/detail.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="696f74350b9d85d58cfd81c2c9e1ece8a7b5b739" datatype="html" approved="yes">
+        <source>Filter zurücksetzen</source>
+        <target state="translated">Reset Filter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0f2c7181f956a79b524820917fb545a17ba93b2b" datatype="html">
+        <source>Sie sehen zufällig ausgewählte Ergebnisse</source>
+        <target state="translated">You're shown randomly selected results</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1d9d3edb6e7c5c0796337b23b946aae100658ce" datatype="html">
+        <source>Suchen Sie nach einfachen Begriffen, Narrativen oder Strukturen oder wiederholen Sie die Leersuche, um neue Zufallseinträge zu erhalten.</source>
+        <target state="translated">Search for simple terms, narratives or structures or repeat the search without terms to be shown new randomly selected results</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c5dfba812145e016129f3d88e92906c30f158a21" datatype="html" approved="yes">
+        <source>Keine Resultate gefunden</source>
+        <target state="translated">No results found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="loading" datatype="html" approved="yes">
+        <source>Laden...</source>
+        <target state="translated">Loading...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/detail/detail.component.html</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.alert.close" datatype="html" approved="yes">
+        <source>Close</source>
+        <target state="translated">Close</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html" approved="yes">
+        <source>Previous</source>
+        <target state="translated">Previous</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html" approved="yes">
+        <source>Next</source>
+        <target state="translated">Next</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html" approved="yes">
+        <source>Previous month</source>
+        <target state="translated">Previous month</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html" approved="yes">
+        <source>Next month</source>
+        <target state="translated">Next month</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html" approved="yes">
+        <source>Select month</source>
+        <target state="translated">Select month</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html" approved="yes">
+        <source>Select year</source>
+        <target state="translated">Select year</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html" approved="yes">
+        <source>««</source>
+        <target state="translated">««</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html" approved="yes">
+        <source>«</source>
+        <target state="translated">«</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html" approved="yes">
+        <source>»</source>
+        <target state="translated">»</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html" approved="yes">
+        <source>»»</source>
+        <target state="translated">»»</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html" approved="yes">
+        <source>First</source>
+        <target state="translated">First</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <target state="needs-review-translation">Previous</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html" approved="yes">
+        <source>Next</source>
+        <target state="translated">Next</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html" approved="yes">
+        <source>Last</source>
+        <target state="translated">Last</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>
+%</source>
+        <target state="needs-review-translation">%</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <target state="needs-review-translation">Increment hours</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <target state="needs-review-translation">HH</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html" approved="yes">
+        <source>Hours</source>
+        <target state="translated">Hours</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html" approved="yes">
+        <source>Decrement hours</source>
+        <target state="translated">Decrement hours</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html" approved="yes">
+        <source>Increment minutes</source>
+        <target state="translated">Increment minutes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html" approved="yes">
+        <source>MM</source>
+        <target state="translated">MM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html" approved="yes">
+        <source>Minutes</source>
+        <target state="translated">Minutes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html" approved="yes">
+        <source>Decrement minutes</source>
+        <target state="translated">Decrement minutes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html" approved="yes">
+        <source>Increment seconds</source>
+        <target state="translated">Increment seconds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html" approved="yes">
+        <source>SS</source>
+        <target state="translated">SS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html" approved="yes">
+        <source>Seconds</source>
+        <target state="translated">Seconds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html" approved="yes">
+        <source>Decrement seconds</source>
+        <target state="translated">Decrement seconds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ i18n.getAfternoonPeriod() }}"/>
+        </source>
+        <target state="needs-translation"/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ i18n.getMorningPeriod() }}"/>
+        </source>
+        <target state="needs-translation"/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.toast.close-aria" datatype="html" approved="yes">
+        <source>Close</source>
+        <target state="translated">Close</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/toast/toast.d.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ec0ffa6d5f77869f26784ae0d3be4d6e38d5ea62" datatype="html">
+        <source>Zurück zu den Suchergebnissen</source>
+        <target state="translated">Back to Search Results</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/detail/detail.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="74f95d9f364a74d24e0d628a8425c05ec7a85209" datatype="html" approved="yes">
+        <source>RDF-Triples herunterladen</source>
+        <target state="translated">Download RDF Triples</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/detail/detail.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c3e073fe5e873916dc38d968c125f1796ae7a471" datatype="html" approved="yes">
+        <source>SPARQL-Abfrage</source>
+        <target state="translated">SPARQL Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/detail/detail.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="94ad3bd9af8e9ce530d8aaedc8778fafb149ce90" datatype="html">
+        <source>Generischer RDF-Browser von</source>
+        <target state="translated">Generic RDF browser by</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f988cbfba13518053cc5eb8e458b630982b03596" datatype="html">
+        <source>Sammlung aus Abfrage entfernen</source>
+        <target>Remove Collection from Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7f88f30792d2bc318c004578e6b5dba6dff9d89" datatype="html">
+        <source>Weitere Sammlung der Abfrage hinzufügen</source>
+        <target>Add additional Collection to Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cc9e8b22ab62ba87e6268be2f9fbb99f37428f25" datatype="html">
+        <source>Handlung aus Abfrage entfernen</source>
+        <target>Remove Action from Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="58e712e219513b42110b7902141045abb70b549f" datatype="html">
+        <source>Weitere Handlung der Abfrage hinzufügen</source>
+        <target>Add additional Action to Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ec4b2756f48cc0bcee699efb522cde06b2a52215" datatype="html">
+        <source>Füge Entität-Abfrage hinzu</source>
+        <target>Add Entity to Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed6ff7cbcf5648ccaa28416120cb24f4a93a797e" datatype="html">
+        <source>Entität aus Abfrage entfernen</source>
+        <target>Remove Entity from Query</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/querybar/querybar.component.html</context>
+          <context context-type="linenumber">168</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="96d92fee01a07ad73e0695eaa32023ed43cafd57" datatype="html">
+        <source>Schnellsuche zurücksetzen</source>
+        <target>Reset Quick Searh</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contentdisplay/contentdisplay.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

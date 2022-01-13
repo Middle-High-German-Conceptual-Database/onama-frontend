@@ -1,0 +1,141 @@
+<button class="btn btn-primary btn-sm mb-2" (click)="close()" i18n>Zurück zu den Suchergebnissen</button>
+<div class="detail card pt-2">
+  <div class="card-body">
+    <div class="breadcrumb d-flex justify-content-between align-items-center p-0">
+      <button class="btn btn-sm btn-light" (click)="goBack()" [disabled]="currentHistoryPos <= 0">
+        <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
+      </button>
+      <ol class="breadcrumb m-0 py-0">
+        <div class="breadcrumb-item" *ngFor="let h of history; let i = index"
+          [ngClass]="{'active' : i == currentHistoryPos}">
+          <a (click)="breadcrumb(i)" title="{{h.label ? h.label : h.id}}">{{h.label ? h.label : h.id}}</a>
+        </div>
+      </ol>
+      <button class="btn btn-sm btn-light" (click)="goForward()" [disabled]="currentHistoryPos >= history.length-1">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+      </button>
+    </div>
+    <div *ngIf="!loading">
+      <div class="float-right">
+        <a [href]="rdfLink" [download]="id + '.n3'" style="font-size: 0.8rem;">
+          <fa-icon icon="download" class="mr-1"></fa-icon><span i18n>RDF-Triples herunterladen</span>
+        </a>
+        <a (click)="queryVisible = !queryVisible" alt="Zeige SPARQL-Abfrage" class="sparqlQuery" i18n-alt>
+          <img class="sparqlImage"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAMAAABQUBiUAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAEZ0FNQQAAsY58+1GTAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAVNQTFRFhroMiLsQirwUjL0Xjr4bkcAjk8InlcMqm8Y2ncc6oclBospFpMtJqM1Rqs9UrtFctNRntdVrt9Zvuddzu9h3vReJvdl7vhuLvx6Nv9p+wSaQwdyCwtyFxTSYxt+NxzucyOCQykahyuGUzOKYzU6lzlGnzuOcz1Wo0Fmq0OSg0Vys02Ow0+an1Gey2Ha52emz2+q33ITB3ey63+2+4e7C4+/G5PDK5aTR5vHN6PLR6rba6vPV7PTZ7cHg73wA734E78jj8IAI8IQQ8IYU8Pbh8Ywg8Y4k8pUw8pc08tDn8vfk85k485s8851A89Pp9KFI9KNM9KdU9Nfr9Pno9atc9a1g9a9k9rZw9t7u9vrs97+D9/vw+Oby+dCj+fz0+tav+tiz+tq3+96/++DD++LH+/D4+/33/OTL/OjT/OrX/e/f/fPn/fj7/f77/vXr/vnz////yDcDPwAAAAFiS0dEcNgAbHQAAAGlSURBVEjH7dVXU8JAEAfwi0QTURHRExt2AQtir3g2UIkoFlSwYAGxRvf7P5koufSYRx/8P2Qyt7/Zm0nZQ+AuYgWQS7oMbqk46pq2zFlTMR4u6lfa60QrmuzhEGJ7BHWl0Ix6wUyX/Qz6DuPrT1TkldV2FjGCkRYnvEgbD99Y75Fv/KCnC60ssk6NoKWFQR7ZJgAqTbZ57CGqPVWoGPcxyClxqNIpDjknAAqFmQZHyRdVCjDrgLkkaKmEfTaSTYCBAiw1WfZUJaDsHcWBGqP00t1hbQylSIZioU2P/RUKR3BIooTs3VLcqj5ifp7CCMZVSsj+A8XdPy+OCyst08MYayghGYqvOllUP6TAjQjGBkrIQYniOVHpGMXYghKSLem/8/RYENtQqXPZBpopIcdVnI5hfcyUkHNZTgaxC5qSaQj/0z9Id9zT15w7Op6Xfu7no99p5LA6B54yznRgTTMy7nftad+KYbrcbFvTrsV34yCCz8stM+2YfjTPLCkfF5t6Gpy81pT1h9Hb2bqGjud1ReO59XKk0OiJoWQ+Dcs5+RrbMBW+AO7V79fwdsl/AAAAAElFTkSuQmCC">
+          <span i18n>Zeige SPARQL-Abfrage</span>
+        </a>
+      </div>
+      <h4 *ngIf="label">{{label + (altLabel ? "/" + altLabel : "")}}</h4>
+      <h6>{{longId}}</h6>
+      <h5 *ngIf="description">{{description}}</h5>
+      <div class="pill mb-3 mr-2" *ngFor="let type of types" [title]="type.object">
+        <fa-icon [icon]="getOnamaIcon(type.object)" [title]="type.object"></fa-icon>
+        {{getLabelOrDefault(type.object)}}
+      </div>
+      <div *ngIf="propertyList?.length > 0" class="mb-3 row propertylist">
+        <div class="col-9">
+          <div *ngFor="let property of propertyList; let i = index" class="row" style="padding: 0 15px">
+            <div class="col-4 px-1 nowrap">
+              <span title="{{property.type.typeUri}}">{{property.label}}</span>
+            </div>
+            <div class="col-8 px-1 nowrap">
+              <a href="{{property.uri}}" target="_blank">{{property.uri}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col reoImageParent" *ngIf="depictedInUrl && reoImageUrl">
+          <a [href]="depictedInUrl" target="_blank" class="reoImage" style="background-image: url({{reoImageUrl}});">
+          </a>
+        </div>
+      </div>
+
+      <div *ngIf="queryVisible" class="sparqlcode mb-3 position-relative">
+        <h5 i18n>SPARQL-Abfrage</h5>
+        <fa-icon icon="times" (click)="queryVisible = false" class="position-absolute"
+          style="cursor: pointer; right: 1rem; top: 1rem;"></fa-icon>
+        <pre class="sparqlcodeInner"><code>{{ queryOut }}</code></pre>
+        <pre class="sparqlcodeInner"><code>{{ queryIn }}</code></pre>
+      </div>
+
+      <div class="row">
+        <div class="col-2 current" *ngIf="detailModelObject && detailModelSubject?.length > 0">
+          <fa-icon [icon]="getOnamaIcon(types[0].object)" [title]="types[0].object"></fa-icon>
+          {{label}}
+        </div>
+        <div class="col-10">
+          <div *ngFor="let line of detailModelSubject; let i = index" class="row">
+            <div *ngIf="!line.intermediateNode" class="col-7 predicate">
+              <div class="arrow">
+                {{line.predicateLabel}}
+                <fa-icon [icon]="['fas', 'chevron-right']" class="icon-arrow"></fa-icon>
+              </div>
+            </div>
+            <div *ngIf="line.intermediateNode" class="col-7 predicate">
+              <div class="arrow">
+                <span class="left-label">{{line.predicateLabel}}</span>
+                <span class="right-label">{{line.intermediatePredicate}}</span>
+                <fa-icon [icon]="['fas', 'chevron-right']" class="icon-arrow"></fa-icon>
+                <a [href]="line.intermediateNode.uri" (click)="onLC(line.intermediateNode.uri)"
+                  [title]="line.intermediateNode.uri">
+                  <div class="icon-node">{{line.intermediateNode.tooltip}}</div>
+                </a>
+              </div>
+            </div>
+            <div class="col-5 object">
+              <a [href]="line.object.uri" target="_blank" [title]="line.object.tooltip + ': ' + line.object.label"
+                (click)="line.object.type.typeUri == 'Link' || onLC(line.object.uri)"
+                [ngClass]="{'isCurrent' : line.object.isCurrent}">
+                <fa-icon [icon]="getOnamaIcon(line.object.type.typeUri)"></fa-icon>
+                {{line.object.label}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" *ngIf="detailModelObject?.length > 0 && detailModelSubject?.length > 0"></div>
+
+      <div class="row">
+        <div class="col-10">
+          <div *ngFor="let line of detailModelObject; let i = index" class="row">
+            <div class="col-5 subject">
+              <a [href]="line.subject.uri" (click)="onLC(line.subject.uri)" [title]="line.subject.tooltip + ': ' + line.subject.label"
+                [ngClass]="{'isCurrent' : line.subject.isCurrent}">
+                <fa-icon [icon]="getOnamaIcon(line.subject.type.typeUri)"></fa-icon> {{line.subject.label}}
+              </a>
+            </div>
+            <div *ngIf="!line.intermediateNode" class="col-7 predicate">
+              <div class="arrow">
+                {{line.predicateLabel}}
+                <fa-icon [icon]="['fas', 'chevron-right']" class="icon-arrow"></fa-icon>
+              </div>
+            </div>
+            <div *ngIf="line.intermediateNode" class="col-7 predicate">
+              <div class="arrow">
+                <span class="left-label">{{line.predicateLabel}}</span>
+                <span class="right-label">{{line.intermediatePredicate}}</span>
+                <fa-icon [icon]="['fas', 'chevron-right']" class="icon-arrow"></fa-icon>
+                <a [href]="line.intermediateNode.uri" (click)="onLC(line.intermediateNode.uri)"
+                  [title]="line.intermediateNode.uri">
+                  <div class="icon-node">{{line.intermediateNode.tooltip}}</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 current" *ngIf="detailModelObject && detailModelObject?.length > 0">
+          <fa-icon [icon]="getOnamaIcon(types[0].object)" [title]="types[0].object"></fa-icon>
+          {{label}}
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-3" *ngIf="loading">
+      <div class="spinner-border" role="status" style="width: 5rem; height: 5rem">
+        <span class="sr-only" i18n="@@loading">Laden...</span>
+      </div>
+    </div>
+
+  </div>
+</div>

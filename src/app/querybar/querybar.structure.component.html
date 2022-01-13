@@ -1,0 +1,50 @@
+<div class="structure">
+
+  <div class="list-line" [ngClass]="{'checked': data.classSearchTermVisible}">
+    <div class="before-icon">
+      <fa-icon icon="caret-right" *ngIf="data.owlHierarchy.length > 0 || data.owlProperties.length > 0"
+        (click)="expanded = !expanded" class="icon-caret" [ngClass]="{'rotate': expanded}"></fa-icon>
+    </div>
+    <input type="checkbox" class="mr-2" [(ngModel)]="data.classSearchTermVisible" (click)="data.classSearchTerm = null">
+    <span class="line-icon">
+      <fa-icon [icon]="getOnamaIcon(data.uri)" class="icon"></fa-icon>
+    </span>
+    <span class="nowrap">{{data.label}}
+    </span>
+  </div>
+  <div class="d-block">
+    <input *ngIf="data.classSearchTermVisible" class="form-control p-1 input-search input-sm mb-2 d-inline-block" placeholder="Bezeichnung" i18n-placeholder
+      [(ngModel)]="data.classSearchTerm">
+  </div>
+  <div *ngIf="expanded && data.owlProperties.length > 0" class="subProperties">
+    <div class="list-line">
+      <div class="before-icon">
+        <fa-icon icon="caret-right" *ngIf="data.owlProperties.length > 0" class="icon-caret"
+          [ngClass]="{'rotate': propertiesExpanded}" (click)="propertiesExpanded = !propertiesExpanded">
+        </fa-icon>
+      </div>
+      <span class="ml-0 relations" i18n>Relationen</span>
+    </div>
+    <ul *ngIf="propertiesExpanded">
+      <li *ngFor="let property of data.owlProperties">
+        <div class="list-line" [ngClass]="{'checked': property.propertySearchTermVisible}">
+          <input type="checkbox" class="mr-2" [(ngModel)]="property.propertySearchTermVisible">
+          <span class="line-icon">
+            <fa-icon [icon]="getOnamaIcon(property.uri)" (click)="property.propertySearchTermVisible = true"
+              class="icon"></fa-icon>
+          </span>
+          <span class="nowrap">{{property.label}}</span>
+        </div>
+        <div class="d-block">
+          <input *ngIf="property.propertySearchTermVisible" placeholder="Bezeichnung" i18n-placeholder
+            class="form-control input-search p-1 input-sm d-inline-block" [(ngModel)]="property.propertySearchTerm">
+        </div>
+      </li>
+    </ul>
+  </div>
+  <ul *ngIf="expanded" class="subStructure">
+    <li *ngFor="let node of data.owlHierarchy">
+      <app-query-bar-structure [data]="node"></app-query-bar-structure>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,100 @@
+.list {
+  position: relative;
+  .list-left,
+  .list-right {
+    width: 50%;
+    padding: 0 0.3rem;
+    float: left;
+  }
+  .icon {
+    text-align: center;
+    font-size: 1.7rem;
+    width: 60px;
+    padding: 5px;
+  }
+  .col {
+    label {
+      color: gray;
+      margin: 0;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      span.significant {
+        font-weight: bold;
+      }
+    }
+  }
+}
+::ng-deep mark {
+  padding: 0;
+  background-color: #ffa;
+}
+
+.sparqlQuery {
+  font-size: 0.8rem;
+  cursor: pointer;
+  .sparqlImage {
+    height: 1.3rem;
+  }
+  pre {
+    overflow-x: auto;
+  }
+}
+
+.sparqlcode {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.classFilter {
+  label {
+    font-size: 0.7rem;
+    border: 1px solid gray;
+    border-radius: 100px;
+    line-height: 1;
+    padding: 0.3rem;
+    cursor: pointer;
+    fa-icon {
+      color: gray;
+    }
+    span.count {
+      border: 1px solid gray;
+      border-radius: 50px;
+      padding: 0rem 0.2rem;
+    }
+    &.active {
+      background: #0275d8;
+      border-color: #0275d8;
+      color: white;
+      fa-icon {
+        color: white;
+      }
+      span {
+        border-color: white;
+      }
+    }
+  }
+}
+
+a.reset-filter {
+  font-size: 0.7rem;
+  display: block;
+}
+
+fa-icon.hoverred {
+  color: gray;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+}
+
+span.shortlabel {
+  max-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  line-height: 11px;
+  white-space: nowrap;
+  margin: 0px 6px -2px 3px;
+}

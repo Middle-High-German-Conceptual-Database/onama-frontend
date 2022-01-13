@@ -1,0 +1,91 @@
+<div [hidden]="showDetail" *ngIf="!loading">
+  <div class="w-100 clearfix pb-2" style="border-bottom: 1px solid gray;">
+    {{filterResults.length}} Resultat(e)
+    <input class="form-control p-1 input-sm w-25 ml-2 d-inline" placeholder="Schnellsuche" i18n-placeholder
+      [(ngModel)]="filter" (ngModelChange)="doFilter()" style="min-width: 8rem;">
+    <fa-icon icon="times" (click)="filter = ''; doFilter();" class="hoverred ml-1" i18n-title title="Schnellsuche zurücksetzen"></fa-icon>
+    <div class="float-right">
+      <a (click)="queryVisible = !queryVisible" alt="Zeige SPARQL-Abfrage" class="sparqlQuery" i18n-alt>
+        <img class="sparqlImage"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAMAAABQUBiUAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAEZ0FNQQAAsY58+1GTAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAVNQTFRFhroMiLsQirwUjL0Xjr4bkcAjk8InlcMqm8Y2ncc6oclBospFpMtJqM1Rqs9UrtFctNRntdVrt9Zvuddzu9h3vReJvdl7vhuLvx6Nv9p+wSaQwdyCwtyFxTSYxt+NxzucyOCQykahyuGUzOKYzU6lzlGnzuOcz1Wo0Fmq0OSg0Vys02Ow0+an1Gey2Ha52emz2+q33ITB3ey63+2+4e7C4+/G5PDK5aTR5vHN6PLR6rba6vPV7PTZ7cHg73wA734E78jj8IAI8IQQ8IYU8Pbh8Ywg8Y4k8pUw8pc08tDn8vfk85k485s8851A89Pp9KFI9KNM9KdU9Nfr9Pno9atc9a1g9a9k9rZw9t7u9vrs97+D9/vw+Oby+dCj+fz0+tav+tiz+tq3+96/++DD++LH+/D4+/33/OTL/OjT/OrX/e/f/fPn/fj7/f77/vXr/vnz////yDcDPwAAAAFiS0dEcNgAbHQAAAGlSURBVEjH7dVXU8JAEAfwi0QTURHRExt2AQtir3g2UIkoFlSwYAGxRvf7P5koufSYRx/8P2Qyt7/Zm0nZQ+AuYgWQS7oMbqk46pq2zFlTMR4u6lfa60QrmuzhEGJ7BHWl0Ix6wUyX/Qz6DuPrT1TkldV2FjGCkRYnvEgbD99Y75Fv/KCnC60ssk6NoKWFQR7ZJgAqTbZ57CGqPVWoGPcxyClxqNIpDjknAAqFmQZHyRdVCjDrgLkkaKmEfTaSTYCBAiw1WfZUJaDsHcWBGqP00t1hbQylSIZioU2P/RUKR3BIooTs3VLcqj5ifp7CCMZVSsj+A8XdPy+OCyst08MYayghGYqvOllUP6TAjQjGBkrIQYniOVHpGMXYghKSLem/8/RYENtQqXPZBpopIcdVnI5hfcyUkHNZTgaxC5qSaQj/0z9Id9zT15w7Op6Xfu7no99p5LA6B54yznRgTTMy7nftad+KYbrcbFvTrsV34yCCz8stM+2YfjTPLCkfF5t6Gpy81pT1h9Hb2bqGjud1ReO59XKk0OiJoWQ+Dcs5+RrbMBW+AO7V79fwdsl/AAAAAElFTkSuQmCC">
+        <span i18n>Zeige SPARQL-Abfrage</span>
+      </a>
+    </div>
+    <div class="d-block classFilter mt-2">
+      <fieldset class="w-100">
+        <label class="d-inline-block mr-1 mb-1" *ngFor="let class of classLabels" [title]="labelMap[class.uri]?.label"
+          [ngClass]="{'active': class?.checked}">
+          <fa-icon [icon]="getOnamaIcon(class.uri)"></fa-icon>
+          <input type="checkbox" [(ngModel)]="class.checked" class="d-none" (ngModelChange)="doFilter()">
+          <span class="shortlabel">{{labelMap[class.uri]?.label}}</span>
+          <span class="count">{{class.count}}</span>
+        </label>
+        <a href="#" (click)="undoFilter()" class="reset-filter mt-1 float-right"><span i18n>Filter zurücksetzen</span>
+          <fa-icon icon="undo"></fa-icon>
+        </a>
+      </fieldset>
+    </div>
+  </div>
+  <div *ngIf="isRandom" class="mt-2 text-secondary">
+    <h2 class="my-0">
+      <fa-icon icon="dice" class="d-inline mx-2"></fa-icon>
+      <span i18n>Sie sehen zufällig ausgewählte Ergebnisse</span>
+      <fa-icon icon="info-circle" class="mx-2 text-primary" style="cursor: pointer;"
+        (click)="expandRandomHelp = !expandRandomHelp"></fa-icon>
+    </h2>
+    <p *ngIf="expandRandomHelp" class="mx-2"><span i18n>Suchen Sie nach einfachen Begriffen, Narrativen oder Strukturen oder wiederholen Sie die Leersuche, um neue Zufallseinträge zu erhalten.</span>
+      <fa-icon icon="times" (click)="expandRandomHelp = false" class="ml-1" style="cursor: pointer;"></fa-icon>
+    </p>
+  </div>
+  <div *ngIf="queryVisible" class="sparqlcode mt-2 position-relative">
+    <h5>SPARQL Abfrage</h5>
+    <fa-icon icon="times" (click)="queryVisible = false" class="position-absolute"
+      style="cursor: pointer; right: 1rem; top: 1rem;"></fa-icon>
+    <pre><code>{{ query }}</code></pre>
+  </div>
+  <div class="list ml-4 mt-2">
+    <div class="row mt-3" *ngFor="let result of filterResults;">
+      <a href="#" (click)="openDetail(result.node?.value)">
+        <div class="col-auto icon"
+          [title]="labelMap[result.classUri?.value || getMostSignificantUri(result.mergedClassUris)]?.label">
+          <fa-icon *ngIf="!result.mergedClassUris" [icon]="getOnamaIcon(result.classUri?.value)"></fa-icon>
+          <fa-icon *ngIf="result.mergedClassUris" [icon]="getOnamaIcon(getMostSignificantUri(result.mergedClassUris))">
+          </fa-icon>
+        </div>
+      </a>
+      <div class="col">
+        <label *ngIf="!result.mergedClassUris" [title]="labelMap[result.classUri?.value]?.label">
+          <fa-icon [icon]="getOnamaIcon(result.classUri?.value)"></fa-icon> {{labelMap[result.classUri?.value]?.label}}
+        </label>
+        <label *ngIf="result.mergedClassUris"><span *ngFor="let u of result.mergedClassUris" class="mr-2"
+            [title]="labelMap[u]?.label">
+            <fa-icon [icon]="getOnamaIcon(u)"></fa-icon><span class="shortlabel">{{labelMap[u]?.label}}</span>
+          </span></label>
+        <a href="#" (click)="openDetail(result.node?.value)" style="font-size: 1.2rem; line-height: 1;"
+          class="d-block mb-1 mt-0" innerHtml="{{result.label.value | highlight: filter}}">
+        </a>
+        <a [href]="result.reo_uri?.value" target="_blank" style="line-height: 1; font-size: 80%; display: block;"
+          *ngIf="result.reo_uri?.value">
+          <fa-icon [icon]="['fas', 'external-link-alt']"></fa-icon>&nbsp;{{result.reo_uri?.value}}
+        </a>
+        <a [href]="result.depictedin_uri?.value" target="_blank" style="line-height: 1; font-size: 80%;"
+          *ngIf="result.depictedin_uri?.value">
+          <fa-icon [icon]="['fas', 'external-link-alt']"></fa-icon>&nbsp;{{result.depictedin_uri?.value}}
+        </a>
+      </div>
+    </div>
+    <div *ngIf="(filterResults.length == 0)">
+      <h2 i18n>Keine Resultate gefunden</h2>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="loading">
+  <div class="spinner-border" role="status" style="width: 6rem; height: 6rem">
+    <span class="sr-only" i18n="@@loading">Laden...</span>
+  </div>
+</div>
+
+<div *ngIf="showDetail">
+  <app-detail [id]="detailID" [longId]="longId" (onClose)="showDetail = false"></app-detail>
+</div>

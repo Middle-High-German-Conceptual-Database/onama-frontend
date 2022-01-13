@@ -1,0 +1,45 @@
+$sidebarWidth: 350px;
+$padding: 10px;
+
+.app-container {
+  display: flex;
+  width: 100%;
+  line-height: 1.2;
+
+  h2 {
+    font-size: 12pt;
+  }
+  a {
+    opacity: 1 !important;
+  }
+  .app-sidebar {
+    width: $sidebarWidth;
+    padding: $padding;
+    background-color: white;
+    border-right: 1px solid gray;
+  }
+  .app-content {
+    width: calc(100% - #{$sidebarWidth});
+    background-color: white;
+    flex-grow: 1;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .app-container{
+    display: block;
+    .app-sidebar{
+      border-right: none;
+      border-bottom: 1px solid gray;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .app-content{
+      width: 100%;
+      padding: 0;
+    }
+  }
+}

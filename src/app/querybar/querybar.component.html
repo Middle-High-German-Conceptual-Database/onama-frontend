@@ -1,0 +1,176 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" (click)="searchView = 'simple'" [ngClass]="{'active' : searchView == 'simple'}" i18n="@@simple"
+      href="#0">Einfach</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="searchView = 'narrativ'" [ngClass]="{'active' : searchView == 'narrativ'}"
+      i18n="@@narative" href="#0">Narrativ</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="searchView = 'structured'" [ngClass]="{'active' : searchView == 'structured'}"
+      i18n="@@structured" href="#0">Strukturiert</a>
+  </li>
+</ul>
+<div *ngIf="searchView == 'simple'">
+  <h2 i18n="@@oss">Einfache Suche</h2>
+  <div class="sticky">
+    <input #searchString (keyup.enter)="doSearch(searchString.value)" class="form-control p-1">
+    <button name="simple" (click)="doSearch(searchString.value)" class="btn btn-sm btn-primary mt-2"
+      i18n="@@search">Suchen</button>
+    <button class="btn btn-secondary btn-sm mt-2 ml-2" (click)="prepareData();" i18n="@@cancel">Abbrechen</button>
+  </div>
+</div>
+<div *ngIf="searchView == 'structured'">
+  <h2 i18n="@@osq">Strukturierte Suche</h2>
+  <div class="structured">
+    <ul>
+      <li *ngFor="let data of structure">
+        <app-query-bar-structure [data]="data"></app-query-bar-structure>
+      </li>
+    </ul>
+  </div>
+  <button name="search" (click)="doQuery()" class="btn btn-sm btn-primary ml-2" i18n="@@search">Suchen</button>
+  <button name="reset" (click)="prepareData()" class="btn btn-sm btn-secondary ml-2" i18n="@@reset">Abbrechen</button>
+</div>
+<div *ngIf="searchView == 'narrativ'">
+  <h2 i18n="@@ons">Narrativ- Suche</h2>
+
+  <h2 i18n>Bezeichnung</h2>
+  <div class="form-group">
+    <input type="text" class="form-control" id="label" name="label" [(ngModel)]="label">
+  </div>
+
+  <h2 i18n>Typ</h2>
+  <div class="grid">
+    <div class="row">
+      <div class="col">
+        <input type="checkbox" class="mr-2" id="konzeption" [(ngModel)]="konzeption">
+        <label for="konzeption" i18n>Konzept</label>
+      </div>
+      <div class="col">
+        <input type="checkbox" class="mr-2" id="realisierung" [(ngModel)]="realisierung">
+        <label for="realisierung" i18n>Realisierung</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <input type="checkbox" class="mr-2" id="text" [(ngModel)]="text">
+        <label for="text" i18n>Text</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <input type="checkbox" class="mr-2" id="bild" [(ngModel)]="bild">
+        <label for="bild" i18n>Bild</label>
+      </div>
+    </div>
+  </div>
+
+  <h2 i18n>Sammlungen</h2>
+  <div class="sel-cols">
+    <div *ngFor="let c of listSelectedCollections" class="row mb-1">
+      <div class="col-10">
+        <select class="form-control-sm selectedCol w-100" [title]="c.label" disabled>
+          <option>{{c.label}}</option>
+        </select>
+      </div>
+      <div class="btn-group col-2 text-right">
+        <fa-icon icon="times" (click)="removeSelectedCol(c)" (keyup.enter)="removeSelectedCol(c)" class="hoverred btn btn-sm" i18n-title title="Sammlung aus Abfrage entfernen" tabindex="0"></fa-icon>
+      </div>
+    </div>
+    <div class="form-group mb-1 row">
+      <div class="col-10">
+        <select id="kollektionen" name="kollektionen" [(ngModel)]="selectedCollectionUri"
+          class="colselect form-control-sm">
+          <option [value]="null"><i i18n="@@choose">(Keine Auswahl)</i></option>
+          <option [value]="col.uri" *ngFor="let col of collections">{{col.label}}</option>
+        </select>
+      </div>
+    </div>
+    <a (click)="!selectedCollectionUri || appendCollection()" class="addCol" [ngClass]="{'disabled' : !selectedCollectionUri}"
+      href="#0" i18n-title title="Weitere Sammlung der Abfrage hinzufügen">
+      <fa-icon icon="plus" class="mr-1 fa-sm"></fa-icon><span i18n>Weitere Sammlung</span>
+    </a>
+  </div>
+
+  <h2 i18n>Handlungen</h2>
+  <div class="sel-acts">
+    <div *ngFor="let c of listSelectedActions" class="row mb-1">
+      <div class="col-10">
+        <select class="form-control-sm selectedCol w-100" [title]="c.label" disabled>
+          <option>{{c.label}}</option>
+        </select>
+      </div>
+      <div class="btn-group col-2 text-right">
+        <fa-icon icon="times" (click)="removeSelectedAct(c)" (keyup.enter)="removeSelectedAct(c)" class="hoverred btn btn-sm" i18n-title title="Handlung aus Abfrage entfernen" tabindex="0"></fa-icon>
+      </div>
+    </div>
+    <div class="form-group mb-1 row">
+      <div class="col-10">
+        <select id="handlung" name="handlung" [(ngModel)]="selectedActionUri" class="actselect form-control-sm">
+          <option [value]="null"><i i18n="@@choose">(Keine Auswahl)</i></option>
+          <option [value]="act.uri" *ngFor="let act of actions">{{act.label}}</option>
+        </select>
+      </div>
+    </div>
+    <a (click)="!selectedActionUri || appendAction()" class="addAct" href="#0" [ngClass]="{'disabled' : !selectedActionUri}" i18n-title title="Weitere Handlung der Abfrage hinzufügen">
+      <fa-icon icon="plus" class="mr-1 fa-sm"></fa-icon><span i18n>Weitere Handlung</span>
+    </a>
+  </div>
+
+  <h2><span i18n>Entitäten</span>
+    <fa-icon icon="plus" class="ml-2 text-primary addbtn fa-sm" (click)="addEntity = true;" i18n-title title="Füge Entität-Abfrage hinzu" *ngIf="!addEntity">
+    </fa-icon>
+  </h2>
+
+  <div class="entities" *ngIf="addEntity">
+    <button (click)="doEntitySave(); addEntity = false;" class="btn-primary btn-sm" i18n="@@addEntity">Entität
+      hinzufügen</button>
+    <button (click)="doEntityReset(); addEntity = false;" class="btn-secondary btn-sm ml-2"
+      i18n="@@addEntity">Abbrechen</button>
+
+    <div class="form-group">
+      <h2 i18n>Bezeichnung</h2>
+      <autocomplete inputclass="form-control" [(value)]="entitySearch" [completedata]="autocompleteItems">
+      </autocomplete>
+    </div>
+
+    <div class="form-group">
+      <h2 i18n>Entitätsfunktion</h2>
+      <select id="narRol" class="form-control-sm w-100" [(ngModel)]="narrativeSelect">
+        <option [value]="null"><i i18n="@@choose">wählen</i></option>
+        <option *ngFor="let entity of entityfunctions" [value]="entity.uri">{{entity.label}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <h2 i18n>Klasse</h2>
+      <select id="klasse" class="form-control-sm w-100" [(ngModel)]="classSelect">
+        <option [value]="null"><i i18n="@@choose">wählen</i></option>
+        <option *ngFor="let entity of persistentItemClasses" [value]="entity.uri">{{entity.label}}</option>
+      </select>
+    </div>
+
+    <h2 i18n>Semantische Rolle</h2>
+    <ul class="semantic-list">
+      <li *ngFor="let data of semanticRole">
+        <app-query-bar-semanticrole [data]="data"></app-query-bar-semanticrole>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sel-ents">
+    <div *ngFor="let e of entities; let i = index" class="selectedEnt">
+      <div class="entLan">{{e.label}}</div>
+      <fa-icon icon="times" class="hoverred" (click)="removeEntity(i)" i18n-title title="Entität aus Abfrage entfernen"></fa-icon>
+    </div>
+    <span *ngIf="entities.length == 0" class="noent" i18n>Keine Entitäten hinzugefügt</span>
+  </div>
+
+  <button class="btn btn-primary btn-sm my-2" (click)="doNarrativSearch();" i18n="@@search">Suchen</button>
+  <button class="btn btn-secondary btn-sm my-2 ml-2" (click)="prepareData();" i18n="@@cancel">Abbrechen</button>
+
+</div>

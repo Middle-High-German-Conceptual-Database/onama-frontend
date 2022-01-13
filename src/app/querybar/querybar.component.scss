@@ -1,0 +1,176 @@
+$classColor: #000;
+$classColorAlpha: 0.2;
+$propertyColor: #f00;
+$propertyColorAlpha: 0.2;
+
+h2 {
+  font-size: 85%;
+  font-weight: bold;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.2rem;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul.semantic-list {
+  li {
+    margin: 0;
+  }
+}
+
+select {
+  &.actselect,
+  &.colselect {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+  }
+}
+
+.sel-cols,
+.sel-acts,
+.sel-ents {
+  //border: 1px solid gray;
+  line-height: 1.2;
+  border-radius: 3px;
+  a.disabled {
+    color: #aaa;
+  }
+  .addCol,
+  .addAct {
+    font-size: 80%;
+  }
+  .selectedEnt {
+    position: relative;
+    margin-bottom: 10px;
+    fa-icon{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .entLan {
+      display: inline;
+      text-align: right;
+    }
+  }
+  .noent{
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 4px;
+    background: #fda;
+  }
+}
+
+fa-icon.addbtn {
+  cursor: pointer;
+  &.disabled {
+    cursor: not-allowed !important;
+    color: gray !important;
+    pointer-events: none;
+  }
+}
+
+.entities {
+  padding: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  select {
+    max-width: 100%;
+  }
+}
+
+.structure {
+  $iconWidth: 1.5rem;
+  $checkboxWidth: 1.2rem;
+  line-height: 1.5;
+  .list-line {
+    position: relative;
+    font-size: 1rem;
+    white-space: nowrap;
+
+    &.checked {
+      font-weight: bold;
+    }
+
+    .line-icon {
+      width: $iconWidth;
+      display: inline-block;
+      color: #273039;
+    }
+    .before-icon {
+      position: absolute;
+      left: 0;
+      width: 1rem;
+      transform: translateX(-100%);
+      .icon-caret {
+        display: inline-block;
+        &:hover {
+          color: black;
+        }
+        cursor: pointer;
+        &.rotate {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  input.input-search {
+    margin-left: $iconWidth + $checkboxWidth;
+    width: calc(100% - #{$iconWidth + $checkboxWidth});
+  }
+  .nowrap {
+    width: calc(100% - 2.5rem);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 1;
+  }
+  ul {
+    list-style: none;
+    li {
+      margin-left: $iconWidth;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .subProperties {
+    margin-left: $iconWidth;
+    //font-size: .8rem;
+    li {
+      margin-left: 0rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    label {
+      margin-bottom: 0;
+    }
+  }
+  .relations {
+    font-size: 90%;
+    font-weight: lighter;
+    font-style: italic;
+  }
+}
+
+li {
+  .nowrap {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 1rem);
+  }
+}
+
+fa-icon.hoverred {
+  color: gray;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+}

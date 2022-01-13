@@ -1,0 +1,219 @@
+.detail.card {
+  padding: 2rem;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  .card-body {
+    h4 {
+      margin: 0;
+    }
+    h6 {
+      font-weight: lighter;
+    }
+    button[disabled] {
+      opacity: 0.5;
+    }
+  }
+  .breadcrumb {
+    margin-top: 0.5rem;
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    background: none;
+    .breadcrumb-item {
+      a {
+        cursor: pointer;
+        max-width: 25rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      span {
+        font-size: 1.3rem;
+      }
+      &.active > a {
+        color: black;
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        padding: 0.2rem;
+        cursor: initial;
+        pointer-events: none;
+      }
+    }
+    button {
+      cursor: pointer;
+      &[disabled] {
+        cursor: not-allowed;
+      }
+    }
+  }
+  a {
+    padding: 0.1rem 0.3rem;
+  }
+  .current {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 90%;
+    fa-icon{
+      width: 100% !important;
+      font-size: 2rem;
+    }
+  }
+  .subject,
+  .object {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+  }
+  .predicate {
+    .arrow {
+      font-size: 60%;
+      text-align: center;
+      border-bottom: 1px solid black;
+      position: relative;
+      line-height: 1;
+      padding-top: 0.7rem;
+      transform: translateY(-50%);
+      .left-label,
+      .right-label {
+        pointer-events: none;
+        position: absolute;
+        width: 45%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .right-label {
+        left: 75%;
+        text-align: right;
+      }
+      .left-label {
+        left: 25%;
+        text-align: left;
+      }
+      fa-icon.icon-arrow {
+        position: absolute;
+        right: -0.5rem;
+        bottom: 0;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+        font-size: 0.8rem;
+      }
+      .icon-node {
+        // todo: color-vars from wp-theme
+        position: absolute;
+        font-size: 10px;
+        white-space: nowrap;
+        line-height: 1;
+        padding: 0.03rem 0.2rem;
+        background: white;
+        color: black;
+        opacity: 1;
+        border: 1px solid #373937;
+        border-radius: 1rem;
+        right: 50%;
+        bottom: 0;
+        -webkit-transform: translate(50%, 50%);
+        transform: translate(50%, 50%);
+        &:hover {
+          background-color: #0275d8;
+          border: 1px solid #0275d8;
+          color: white;
+        }
+      }
+      &.reversed {
+        fa-icon {
+          right: unset;
+          left: -0.5rem;
+        }
+      }
+    }
+  }
+  .intermediate {
+    border-radius: 100px;
+    border: 1px solid gray;
+    padding: 0.2rem;
+    font-size: 0.7rem;
+  }
+
+  .propertylist {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    fa-icon {
+      display: inline-block;
+      width: 1rem;
+    }
+  }
+}
+.pill {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.2rem 0.7rem;
+  background-color: orange;
+  border-radius: 5rem;
+}
+
+.sparqlQuery {
+  font-size: 0.8rem;
+  cursor: pointer;
+  .sparqlImage {
+    height: 1.3rem;
+  }
+  pre {
+    overflow-x: auto;
+  }
+}
+
+.sparqlcode {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.sparqlcodeInner {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #e8e8e8;
+  //background-color: -10%;
+}
+
+.divider {
+  border-bottom: 1px solid gray;
+  margin: 1rem;
+}
+
+.reoImageParent {
+  $height: 5rem;
+  height: 5rem;
+  .reoImage {
+    height: $height;
+    width: $height;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+    right: 15px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    transition: all 0.2s ease;
+    &:hover {
+      height: 3 * $height;
+      width: 3 * $height;
+    }
+  }
+}
+
+.nowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
